@@ -21,6 +21,15 @@
 #define STRETCH_RECT_WIDTH                      6
 #define STRETCH_RECT_HEIGHT                     6
 
+// 选中矩形信息矩形的宽高;
+#define SELECT_RECT_INFO_WIDTH                  75
+#define SELECT_RECT_INFO_HEIGHT                 20
+
+// 选区矩形的右下顶点放大图的宽高;
+#define END_POINT_RECT_WIDTH                    122
+#define END_POINT_RECT_HEIGHT                   122
+#define END_POINT_IMAGE_HEIGHT                  90
+
 // 截图状态
 enum CaptureState {
     InitCapture,
@@ -83,6 +92,9 @@ private:
     StretchRectState getStretchRectState(QPoint point);
     // 设置拖拽点上鼠标样式
     void setStretchCursorStyle(StretchRectState stretchRectState);
+
+    void drawSelectRectInfo();          // 绘制选中矩形信息
+    void drawEndPointImage();           // 绘制鼠标拖拽时选区矩形的右下顶点的放大图
 
 protected:
     void mousePressEvent(QMouseEvent *event);

@@ -103,16 +103,24 @@ void CaptureImage::mousePressEvent(QMouseEvent *event)
 void CaptureImage::mouseMoveEvent(QMouseEvent *event)
 {
     // TODO 获取窗口句柄
-    if (currentCaptureState == BeginCaptureImage)
+    // 准备截图
+    if (currentCaptureState == InitCapture)
+    {
+        update();
+    }
+    // 截图
+    else if (currentCaptureState == BeginCaptureImage)
     {
         endCapturePoint = event->pos();
         update();
     }
+    // 移动选区
     else if (currentCaptureState == BeginMoveCaptureArea)
     {
         endMovePoint = event->pos();
         update();
     }
+    // 拖拽
     else if (currentCaptureState == BeginMoveStretchRect)
     {
         endMovePoint = event->pos();
@@ -177,20 +185,58 @@ void CaptureImage::paintEvent(QPaintEvent *event)
     switch (currentCaptureState) {
         case InitCapture:
         {
+            // 绘制鼠标拖拽时选区矩形的右下顶点的放大图
+            drawEndPointImage();
             break;
         }
         case BeginCaptureImage:
+        {
+            currentSelectRect = getSelectRect();
+            drawCaptureImage();
+            // 绘制鼠标拖拽时选区矩形的右下顶点的放大图
+            drawEndPointImage();
+            break;
+        }
         case FinishCaptureImage:
+        {
+            currentSelectRect = getSelectRect();
+            drawCaptureImage();
+            break;
+        }
         case BeginMoveCaptureArea:
+        {
+            currentSelectRect = getSelectRect();
+            drawCaptureImage();
+            // 绘制鼠标拖拽时选区矩形的右下顶点的放大图
+            drawEndPointImage();
+            break;
+        }
         case FinishMoveCaptureArea:
+        {
+            currentSelectRect = getSelectRect();
+            drawCaptureImage();
+            break;
+        }
         case BeginMoveStretchRect:
+        {
+            currentSelectRect = getSelectRect();
+            drawCaptureImage();
+            // 绘制鼠标拖拽时选区矩形的右下顶点的放大图
+            drawEndPointImage();
+            break;
+        }
         case FinishMoveStretchRect:
         {
             currentSelectRect = getSelectRect();
             drawCaptureImage();
+            break;
         }
         case FinishCapture:
+        {
+            currentSelectRect = getSelectRect();
+            drawCaptureImage();
             break;
+        }
         default:
             break;
     }
@@ -274,6 +320,7 @@ void CaptureImage::drawCaptureImage()
     painter.setPen(QPen(QColor(0, 180, 255), SELECT_RECT_BORDER_WIDTH));    // 设置画笔
     painter.drawRect(currentSelectRect);                                    // 绘制边框
     drawStretchRect();                                                      // 绘制拖拽点
+    drawSelectRectInfo();                                                   // 绘制选中矩形框信息
 }
 
 // 获取移动后,当前选中的矩形;
@@ -494,3 +541,99 @@ void CaptureImage::drawStretchRect()
     painter.fillRect(bottomCenterRect, color);
 }
 
+// 绘制选中矩形信息宽高
+void CaptureImage::drawSelectRectInfo()
+{
+    int posX, posY;
+    QPoint topLeftPoint = currentSelectRect.topLeft();
+
+    posX = topLeftPoint.x() + SELECT_RECT_BORDER_WIDTH;
+    if (topLeftPoint.y() > SELECT_RECT_INFO_HEIGHT)
+    {
+        posY = topLeftPoint.y() - SELECT_RECT_INFO_HEIGHT - SELECT_RECT_BORDER_WIDTH;
+    }
+    else
+    {
+        posY = topLeftPoint.y() + SELECT_RECT_BORDER_WIDTH;
+    }
+    topLeftPoint = QPoint(posX, posY);
+
+    QColor backColor = QColor(0, 0, 0, 160);
+    painter.fillRect(QRect(topLeftPoint, QSize(SELECT_RECT_INFO_WIDTH, SELECT_RECT_INFO_HEIGHT)), backColor);
+
+    // 当前选中矩形的宽高信息;
+    QString selectRectSizeInfo = QString("%1 * %2").arg(currentSelectRect.width()).arg(currentSelectRect.height());
+    int fontWidth = this->fontMetrics().horizontalAdvance(selectRectSizeInfo);
+    painter.setPen(QPen(Qt::white));
+    painter.drawText(QPoint(topLeftPoint.x() + (SELECT_RECT_INFO_WIDTH - fontWidth) / 2, topLeftPoint.y() + 14), selectRectSizeInfo);
+}
+
+// 绘制鼠标拖拽时选区矩形的右下顶点的放大图
+void CaptureImage::drawEndPointImage()
+{
+    int posX, posY;
+    QPoint topLeftPoint = QCursor::pos();
+
+    // 5、25 分别为鼠标所在点距离放大图的X轴、Y轴距离;
+    //当放大图片区域超出右边屏幕时;
+    if (topLeftPoint.x() + END_POINT_RECT_WIDTH + 5 > screenWidth)
+    {
+        // 这里暂时未考虑到双屏幕（多屏幕）;
+        if (topLeftPoint.x() > screenWidth)
+        {
+            posX = screenWidth - END_POINT_RECT_WIDTH - 5;
+        }
+        else
+        {
+            posX = topLeftPoint.x() - END_POINT_RECT_WIDTH - 5;
+        }
+    }
+    else
+    {
+        posX = topLeftPoint.x() + 5;
+    }
+
+    // 当放大图片区域超出屏幕下方时;
+    if (topLeftPoint.y() + END_POINT_RECT_HEIGHT + 25 > screenHeight)
+    {
+        posY = topLeftPoint.y() - END_POINT_RECT_HEIGHT - 25;
+    }
+        // 当鼠标未屏幕下方，正常显示时;
+    else
+    {
+        posY = topLeftPoint.y() + 25;
+    }
+
+    topLeftPoint = QPoint(posX, posY);
+
+    // 绘制放大图;
+    QPixmap endPointImage = screenPixmap.copy(QRect(QCursor::pos().x() - 15, QCursor::pos().y() - 11, 30, 22)).scaled(END_POINT_RECT_WIDTH, END_POINT_IMAGE_HEIGHT);
+    painter.drawPixmap(topLeftPoint, endPointImage);
+
+    // 绘制十字坐标;
+    painter.setPen(QPen(QColor(0, 180, 255 , 90), 4));
+    // 竖线;
+    painter.drawLine(QPoint(topLeftPoint.x() + END_POINT_RECT_WIDTH / 2, topLeftPoint.y() + 2), QPoint(topLeftPoint.x() + END_POINT_RECT_WIDTH / 2, topLeftPoint.y() + END_POINT_IMAGE_HEIGHT - 2));
+    // 横线;
+    painter.drawLine(QPoint(topLeftPoint.x() + 2 , topLeftPoint.y() + END_POINT_IMAGE_HEIGHT / 2), QPoint(topLeftPoint.x() + END_POINT_RECT_WIDTH - 2 , topLeftPoint.y() + END_POINT_IMAGE_HEIGHT / 2));
+
+    painter.setPen(QPen(Qt::white, 3));
+    painter.drawRect(QRect(QPoint(topLeftPoint.x() + 1 , topLeftPoint.y() + 1), QSize(END_POINT_RECT_WIDTH - 2, END_POINT_IMAGE_HEIGHT - 2)));
+    painter.setPen(QPen(Qt::black, 1));
+    painter.drawRect(QRect(topLeftPoint, QSize(END_POINT_RECT_WIDTH, END_POINT_IMAGE_HEIGHT)));
+
+    // 绘制放大图信息;
+    topLeftPoint = QPoint(topLeftPoint.x(), topLeftPoint.y() + END_POINT_IMAGE_HEIGHT);
+    QColor backColor = QColor(0, 0, 0, 160);
+    painter.fillRect(QRect(topLeftPoint, QSize(END_POINT_RECT_WIDTH, END_POINT_RECT_HEIGHT - END_POINT_IMAGE_HEIGHT)), backColor);
+    // 当前选中矩形的宽高信息;
+    //QString selectRectSizeInfo = QString("%1 * %2").arg(currentSelectRect.width()).arg(currentSelectRect.height());
+    // 鼠标位置
+    QString selectRectSizeInfo = QString("POS:(%1 * %2)").arg(QCursor::pos().x()).arg(QCursor::pos().y());
+    QImage image = screenPixmap.toImage();
+    QColor endPointColor = image.pixel(QCursor::pos());
+    QString selectPointRGBInfo = QString("RGB:(%1,%2,%3)").arg(endPointColor.red()).arg(endPointColor.green()).arg(endPointColor.blue());
+    painter.setPen(Qt::white);
+    painter.drawText(QPoint(topLeftPoint.x() + 6, topLeftPoint.y() + 14), selectRectSizeInfo);
+    painter.drawText(QPoint(topLeftPoint.x() + 6, topLeftPoint.y() + 27), selectPointRGBInfo);
+}

@@ -9,6 +9,7 @@ CaptureImage::CaptureImage(QWidget *parent)
           currentCaptureState(InitCapture)
 {
     initWindow();
+    initStretchRect();
     loadBackgroundPixmap();
 }
 
@@ -25,6 +26,22 @@ void CaptureImage::initData() {
     beginMovePoint.setY(0);
     endMovePoint.setX(0);
     endMovePoint.setY(0);
+}
+
+// 初始化拖拽点
+void CaptureImage::initStretchRect()
+{
+    currentStretchRectState = NotSelect;
+
+    topLeftRect = QRect(0, 0, 0, 0);
+    topRightRect = QRect(0, 0, 0, 0);
+    bottomLeftRect = QRect(0, 0, 0, 0);
+    bottomRightRect = QRect(0, 0, 0, 0);
+
+    topCenterRect = QRect(0, 0, 0, 0);
+    leftCenterRect = QRect(0, 0, 0, 0);
+    rightCenterRect = QRect(0, 0, 0, 0);
+    bottomCenterRect = QRect(0, 0, 0, 0);
 }
 
 void CaptureImage::initWindow()
@@ -56,6 +73,7 @@ void CaptureImage::loadBackgroundPixmap()
 
 void CaptureImage::mousePressEvent(QMouseEvent *event)
 {
+    currentStretchRectState = getStretchRectState(event->pos());
     if (event->button() == Qt::LeftButton)
     {
         if (currentCaptureState == InitCapture)
@@ -63,10 +81,18 @@ void CaptureImage::mousePressEvent(QMouseEvent *event)
             currentCaptureState = BeginCaptureImage;
             beginCapturePoint = event->pos();
         }
+        // 是否在拉伸的矩形中
+        else if (currentStretchRectState != NotSelect)
+        {
+            currentCaptureState = BeginMoveStretchRect;
+            // 当前鼠标在拖动选中区顶点时，设置鼠标当前状态
+            setStretchCursorStyle(currentStretchRectState);
+            beginMovePoint = event->pos();
+        }
+        // 鼠标在截图选中区域时，按下鼠标左键进行选区移动
         else if (isPressPointInSelectRect(event->pos()))
         {
             currentCaptureState = BeginMoveCaptureArea;
-            setCursor(Qt::SizeAllCursor);
             beginMovePoint = event->pos();
         }
     }
@@ -87,9 +113,21 @@ void CaptureImage::mouseMoveEvent(QMouseEvent *event)
         endMovePoint = event->pos();
         update();
     }
+    else if (currentCaptureState == BeginMoveStretchRect)
+    {
+        endMovePoint = event->pos();
+        update();
+        // 当前鼠标在拖动选中区顶点时，在鼠标未停止移动前，一直保持鼠标当前状态
+        return QWidget::mouseMoveEvent(event);
+    }
 
-    // 根据鼠标是否在选中区域内设置鼠标样式;
-    if (isPressPointInSelectRect(event->pos()))
+    // 根据鼠标是否在选中区域内设置鼠标样式
+    StretchRectState stretchRectState = getStretchRectState(event->pos());
+    if (stretchRectState != NotSelect)
+    {
+        setStretchCursorStyle(stretchRectState);
+    }
+    else if (isPressPointInSelectRect(event->pos()))
     {
         setCursor(Qt::SizeAllCursor);
     }
@@ -103,15 +141,24 @@ void CaptureImage::mouseMoveEvent(QMouseEvent *event)
 
 void CaptureImage::mouseReleaseEvent(QMouseEvent *event)
 {
+    // 截图
     if (currentCaptureState == BeginCaptureImage)
     {
         currentCaptureState = FinishCaptureImage;
         endCapturePoint = event->pos();
         update();
     }
+        // 移动
     else if (currentCaptureState == BeginMoveCaptureArea)
     {
         currentCaptureState = FinishMoveCaptureArea;
+        endMovePoint = event->pos();
+        update();
+    }
+        // 拖拽
+    else if (currentCaptureState == BeginMoveStretchRect)
+    {
+        currentCaptureState = FinishMoveStretchRect;
         endMovePoint = event->pos();
         update();
     }
@@ -124,7 +171,6 @@ void CaptureImage::paintEvent(QPaintEvent *event)
     painter.begin(this);
 
     QColor shadowColor = QColor(0, 0, 0, 100);                          // 设置遮罩颜色
-    painter.setPen(QPen(Qt::blue, 1, Qt::SolidLine, Qt::FlatCap));      // 设置画笔
     painter.drawPixmap(0, 0, screenPixmap);                             // 绘制原始图片
     painter.fillRect(screenPixmap.rect(), shadowColor);                 // 绘制遮罩层
 
@@ -137,10 +183,16 @@ void CaptureImage::paintEvent(QPaintEvent *event)
         case FinishCaptureImage:
         case BeginMoveCaptureArea:
         case FinishMoveCaptureArea:
+        case BeginMoveStretchRect:
+        case FinishMoveStretchRect:
         {
             currentSelectRect = getSelectRect();
             drawCaptureImage();
         }
+        case FinishCapture:
+            break;
+        default:
+            break;
     }
 
     painter.end();
@@ -197,24 +249,31 @@ bool CaptureImage::isPressPointInSelectRect(QPoint mousePressPoint) {
 // 根据当前截取状态获取当前选中的截图区域;
 QRect CaptureImage::getSelectRect()
 {
+    QRect selectRect{0, 0, 0, 0};
     if (currentCaptureState == BeginCaptureImage || currentCaptureState == FinishCaptureImage)
     {
-        return getRect(beginCapturePoint, endCapturePoint);
+        selectRect = getRect(beginCapturePoint, endCapturePoint);
     }
     else if (currentCaptureState == BeginMoveCaptureArea || currentCaptureState == FinishMoveCaptureArea)
     {
-        return getMoveRect();
+        selectRect = getMoveRect();
+    }
+    else if (currentCaptureState == BeginMoveStretchRect || currentCaptureState == FinishMoveStretchRect)
+    {
+        selectRect = getStretchRect();
     }
 
-    return QRect(0, 0, 0, 0);
+    return selectRect;
 }
 
 // 绘制当前选中的截图区域;
 void CaptureImage::drawCaptureImage()
 {
-    capturePixmap = screenPixmap.copy(currentSelectRect);                    // 从原始图片中截取的图片
-    painter.drawPixmap(currentSelectRect.topLeft(), capturePixmap);          // 绘制截取的图片
-    painter.drawRect(currentSelectRect);                                     // 绘制边框
+    capturePixmap = screenPixmap.copy(currentSelectRect);                   // 对选框区域进行截图
+    painter.drawPixmap(currentSelectRect.topLeft(), capturePixmap);         // 在遮罩上绘制截取的图片
+    painter.setPen(QPen(QColor(0, 180, 255), SELECT_RECT_BORDER_WIDTH));    // 设置画笔
+    painter.drawRect(currentSelectRect);                                    // 绘制边框
+    drawStretchRect();                                                      // 绘制拖拽点
 }
 
 // 获取移动后,当前选中的矩形;
@@ -267,5 +326,171 @@ QPoint CaptureImage::getMovePoint()
     }
 
     return movePoint;
+}
+
+// 获取当前鼠标位于哪一个拖拽顶点
+StretchRectState CaptureImage::getStretchRectState(QPoint point)
+{
+    StretchRectState stretchRectState = NotSelect;
+
+    if (topLeftRect.contains(point))
+    {
+        stretchRectState = TopLeftRect;
+    }
+    else if (topCenterRect.contains(point))
+    {
+        stretchRectState = TopCenterRect;
+    }
+    else if (topRightRect.contains(point))
+    {
+        stretchRectState = TopRightRect;
+    }
+    else if (rightCenterRect.contains(point))
+    {
+        stretchRectState = RightCenterRect;
+    }
+    else if (bottomRightRect.contains(point))
+    {
+        stretchRectState = BottomRightRect;
+    }
+    else if (bottomCenterRect.contains(point))
+    {
+        stretchRectState = BottomCenterRect;
+    }
+    else if (bottomLeftRect.contains(point))
+    {
+        stretchRectState = BottomLeftRect;
+    }
+    else if (leftCenterRect.contains(point))
+    {
+        stretchRectState = LeftCenterRect;
+    }
+
+    return stretchRectState;
+}
+
+// 设置鼠标停在拖拽点处的样式
+void CaptureImage::setStretchCursorStyle(StretchRectState stretchRectState)
+{
+    switch (stretchRectState)
+    {
+        case NotSelect:
+            setCursor(Qt::ArrowCursor);
+            break;
+        case TopLeftRect:
+        case BottomRightRect:
+            setCursor(Qt::SizeFDiagCursor);
+            break;
+        case TopRightRect:
+        case BottomLeftRect:
+            setCursor(Qt::SizeBDiagCursor);
+            break;
+        case LeftCenterRect:
+        case RightCenterRect:
+            setCursor(Qt::SizeHorCursor);
+            break;
+        case TopCenterRect:
+        case BottomCenterRect:
+            setCursor(Qt::SizeVerCursor);
+            break;
+        default:
+            break;
+    }
+}
+
+// 获取拖拽后的矩形选中区域
+QRect CaptureImage::getStretchRect()
+{
+    QRect stretchRect;
+    QRect currentRect = getRect(beginCapturePoint, endCapturePoint);
+    switch (currentStretchRectState)
+    {
+        case NotSelect:
+            stretchRect = getRect(beginCapturePoint, endCapturePoint);
+            break;
+        case TopLeftRect:
+            stretchRect = getRect(currentRect.bottomRight(), endMovePoint);
+            break;
+        case TopRightRect:
+            stretchRect = getRect(currentRect.bottomLeft(), endMovePoint);
+            break;
+        case BottomLeftRect:
+            stretchRect = getRect(currentRect.topRight(), endMovePoint);
+            break;
+        case BottomRightRect:
+            stretchRect = getRect(currentRect.topLeft(), endMovePoint);
+            break;
+        case LeftCenterRect:
+        {
+            QPoint beginPoint = QPoint(endMovePoint.x(), currentRect.topLeft().y());
+            stretchRect = getRect(currentRect.bottomRight(), beginPoint);
+        }
+            break;
+        case TopCenterRect:
+        {
+            QPoint beginPoint = QPoint(currentRect.topLeft().x(), endMovePoint.y());
+            stretchRect = getRect(currentRect.bottomRight(), beginPoint);
+        }
+            break;
+        case RightCenterRect:
+        {
+            QPoint endPoint = QPoint(endMovePoint.x(), currentRect.bottomRight().y());
+            stretchRect = getRect(currentRect.topLeft(), endPoint);
+        }
+            break;
+        case BottomCenterRect:
+        {
+            QPoint endPoint = QPoint(currentRect.bottomRight().y(), endMovePoint.y());
+            stretchRect = getRect(currentRect.topLeft(), endPoint);
+        }
+            break;
+        default:
+            stretchRect = getRect(beginCapturePoint, endCapturePoint);
+            break;
+    }
+
+    // 拖动结束更新beginCapturePoint, endCapturePoint
+    if (currentCaptureState == FinishMoveStretchRect)
+    {
+        beginCapturePoint = stretchRect.topLeft();
+        endCapturePoint = stretchRect.bottomRight();
+    }
+
+    return stretchRect;
+}
+
+// 绘制选中矩形各拖拽点小矩形;
+void CaptureImage::drawStretchRect()
+{
+    QColor color = QColor(0, 174, 255);
+    // 四个角坐标;
+    QPoint topLeft = currentSelectRect.topLeft();
+    QPoint topRight = currentSelectRect.topRight();
+    QPoint bottomLeft = currentSelectRect.bottomLeft();
+    QPoint bottomRight = currentSelectRect.bottomRight();
+    // 四条边中间点坐标;
+    QPoint leftCenter = QPoint(topLeft.x(), (topLeft.y() + bottomLeft.y()) / 2);
+    QPoint topCenter = QPoint((topLeft.x() + topRight.x()) / 2, topLeft.y());
+    QPoint rightCenter = QPoint(topRight.x(), leftCenter.y());
+    QPoint bottomCenter = QPoint(topCenter.x(), bottomLeft.y());
+
+    topLeftRect = QRect(topLeft.x() - STRETCH_RECT_WIDTH / 2, topLeft.y() - STRETCH_RECT_HEIGHT / 2, STRETCH_RECT_WIDTH, STRETCH_RECT_HEIGHT);
+    topRightRect = QRect(topRight.x() - STRETCH_RECT_WIDTH / 2, topRight.y() - STRETCH_RECT_HEIGHT / 2, STRETCH_RECT_WIDTH, STRETCH_RECT_HEIGHT);
+    bottomLeftRect = QRect(bottomLeft.x() - STRETCH_RECT_WIDTH / 2, bottomLeft.y() - STRETCH_RECT_HEIGHT / 2, STRETCH_RECT_WIDTH, STRETCH_RECT_HEIGHT);
+    bottomRightRect = QRect(bottomRight.x() - STRETCH_RECT_WIDTH / 2, bottomRight.y() - STRETCH_RECT_HEIGHT / 2, STRETCH_RECT_WIDTH, STRETCH_RECT_HEIGHT);
+
+    leftCenterRect = QRect(leftCenter.x() - STRETCH_RECT_WIDTH / 2, leftCenter.y() - STRETCH_RECT_HEIGHT / 2, STRETCH_RECT_WIDTH, STRETCH_RECT_HEIGHT);
+    topCenterRect = QRect(topCenter.x() - STRETCH_RECT_WIDTH / 2, topCenter.y() - STRETCH_RECT_HEIGHT / 2, STRETCH_RECT_WIDTH, STRETCH_RECT_HEIGHT);
+    rightCenterRect = QRect(rightCenter.x() - STRETCH_RECT_WIDTH / 2, rightCenter.y() - STRETCH_RECT_HEIGHT / 2, STRETCH_RECT_WIDTH, STRETCH_RECT_HEIGHT);
+    bottomCenterRect = QRect(bottomCenter.x() - STRETCH_RECT_WIDTH / 2, bottomCenter.y() - STRETCH_RECT_HEIGHT / 2, STRETCH_RECT_WIDTH, STRETCH_RECT_HEIGHT);
+
+    painter.fillRect(topLeftRect, color);
+    painter.fillRect(topRightRect, color);
+    painter.fillRect(bottomLeftRect, color);
+    painter.fillRect(bottomRightRect, color);
+    painter.fillRect(leftCenterRect, color);
+    painter.fillRect(topCenterRect, color);
+    painter.fillRect(rightCenterRect, color);
+    painter.fillRect(bottomCenterRect, color);
 }
 

@@ -1,0 +1,162 @@
+{
+	"BUILD_DIR" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture_autogen",
+	"CMAKE_BINARY_DIR" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture",
+	"CMAKE_EXECUTABLE" : "D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/bin/cmake.exe",
+	"CMAKE_LIST_FILES" : 
+	[
+		"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/CMakeLists.txt",
+		"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/3.20.2/CMakeSystem.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeSystemSpecificInitialize.cmake",
+		"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/3.20.2/CMakeCCompiler.cmake",
+		"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/3.20.2/CMakeCXXCompiler.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeSystemSpecificInformation.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeGenericSystem.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeInitializeConfigs.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/WindowsPaths.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeFindCodeBlocks.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeExtraGeneratorDetermineCompilerMacrosAndIncludeDirs.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/ProcessorCount.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeCInformation.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Compiler/GNU-C.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Compiler/GNU.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Compiler/CMakeCommonCompilerMacros.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU-C.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU.cmake",
+		"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/3.20.2/CMakeRCCompiler.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeRCInformation.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-windres.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU-C-ABI.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeCXXInformation.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeLanguageInformation.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Compiler/GNU-CXX.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Compiler/GNU.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU-CXX.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/Platform/Windows-GNU-CXX-ABI.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeCommonLanguageInclude.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5/Qt5ConfigVersion.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5/Qt5Config.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5/Qt5ModuleLocation.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreConfig.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreMacros.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeParseArguments.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeParseArguments.cmake"
+	],
+	"CMAKE_SOURCE_DIR" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture",
+	"DEP_FILE" : "",
+	"DEP_FILE_RULE_NAME" : "",
+	"HEADERS" : 
+	[
+		[
+			"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/CaptureImage.h",
+			"MU",
+			"EWIEGA46WW/moc_CaptureImage.cpp",
+			null
+		],
+		[
+			"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/IceCapture.h",
+			"MU",
+			"EWIEGA46WW/moc_IceCapture.cpp",
+			null
+		]
+	],
+	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
+	"INCLUDE_DIR" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture_autogen/include",
+	"MOC_COMPILATION_FILE" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture_autogen/mocs_compilation.cpp",
+	"MOC_DEFINITIONS" : [ "QT_CORE_LIB", "QT_GUI_LIB", "QT_WIDGETS_LIB" ],
+	"MOC_DEPEND_FILTERS" : 
+	[
+		[
+			"Q_PLUGIN_METADATA",
+			"[\n][ \t]*Q_PLUGIN_METADATA[ \t]*\\([^\\)]*FILE[ \t]*\"([^\"]+)\""
+		]
+	],
+	"MOC_INCLUDES" : 
+	[
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/include",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtCore",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/mkspecs/win32-g++",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtGui",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtANGLE",
+		"D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtWidgets",
+		"D:/MyPrograms/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++",
+		"D:/MyPrograms/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32",
+		"D:/MyPrograms/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward",
+		"D:/MyPrograms/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include",
+		"D:/MyPrograms/Qt/Tools/mingw810_32/lib/gcc/i686-w64-mingw32/8.1.0/include-fixed",
+		"D:/MyPrograms/Qt/Tools/mingw810_32/i686-w64-mingw32/include"
+	],
+	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],
+	"MOC_OPTIONS" : [],
+	"MOC_PATH_PREFIX" : false,
+	"MOC_PREDEFS_CMD" : 
+	[
+		"D:/MyPrograms/Qt/Tools/mingw810_32/bin/g++.exe",
+		"-dM",
+		"-E",
+		"-c",
+		"D:/MyPrograms/JetBrains/CLion 2021.2.4/bin/cmake/win/share/cmake-3.20/Modules/CMakeCXXCompilerABI.cpp"
+	],
+	"MOC_PREDEFS_FILE" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture_autogen/moc_predefs.h",
+	"MOC_RELAXED_MODE" : false,
+	"MOC_SKIP" : [],
+	"MULTI_CONFIG" : false,
+	"PARALLEL" : 4,
+	"PARSE_CACHE_FILE" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/IceCapture_autogen.dir/ParseCache.txt",
+	"QT_MOC_EXECUTABLE" : "D:/MyPrograms/Qt/5.15.2/mingw81_32/bin/moc.exe",
+	"QT_UIC_EXECUTABLE" : "D:/MyPrograms/Qt/5.15.2/mingw81_32/bin/uic.exe",
+	"QT_VERSION_MAJOR" : 5,
+	"QT_VERSION_MINOR" : 15,
+	"SETTINGS_FILE" : "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/IceCapture_autogen.dir/AutogenUsed.txt",
+	"SOURCES" : 
+	[
+		[
+			"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/CaptureImage.cpp",
+			"MU",
+			null
+		],
+		[
+			"E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/IceCapture.cpp",
+			"MU",
+			null
+		],
+		[ "E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/main.cpp", "MU", null ]
+	],
+	"UIC_OPTIONS" : [],
+	"UIC_SEARCH_PATHS" : [],
+	"UIC_SKIP" : [],
+	"UIC_UI_FILES" : [],
+	"VERBOSITY" : 0
+}

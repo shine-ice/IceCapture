@@ -1,0 +1,4 @@
+E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/IceCapture.dir
+E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/CMakeFiles/IceCapture_autogen.dir

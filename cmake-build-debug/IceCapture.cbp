@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="IceCapture"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\MyPrograms\;CMake Files\MyPrograms\Qt\;CMake Files\MyPrograms\Qt\5.15.2\;CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\;CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\;CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\;CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5\;CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Core\;CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\;CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Widgets\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IceCapture">
+				<Option output="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add directory="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture_autogen/include"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtCore"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/./mkspecs/win32-g++"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtGui"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtANGLE"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtWidgets"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 IceCapture"/>
+					<CompileFile command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IceCapture/fast">
+				<Option output="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add directory="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture_autogen/include"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtCore"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/./mkspecs/win32-g++"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtGui"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtANGLE"/>
+					<Add directory="D:/MyPrograms/Qt/5.15.2/mingw81_32/include/QtWidgets"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/i686-w64-mingw32"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include/c++/backward"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/include-fixed"/>
+					<Add directory="D:/MyPrograms/Qt/Tools/mingw810_32/bin/../lib/gcc/i686-w64-mingw32/8.1.0/../../../../i686-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 IceCapture/fast"/>
+					<CompileFile command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="IceCapture_autogen">
+				<Option working_dir="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 IceCapture_autogen"/>
+					<CompileFile command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="D:/MyPrograms/Qt/Tools/mingw810_32/bin/mingw32-make.exe -f &quot;E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/CaptureImage.cpp">
+			<Option target="IceCapture"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/CaptureImage.h">
+			<Option target="IceCapture"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/IceCapture.cpp">
+			<Option target="IceCapture"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/IceCapture.h">
+			<Option target="IceCapture"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug/IceCapture_autogen/mocs_compilation.cpp">
+			<Option target="IceCapture"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/main.cpp">
+			<Option target="IceCapture"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5/Qt5Config.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5/Qt5ConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5/Qt5ModuleLocation.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QSvgIconPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QSvgPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/MyPrograms/Qt/5.15.2/mingw81_32/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\MyPrograms\Qt\5.15.2\mingw81_32\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

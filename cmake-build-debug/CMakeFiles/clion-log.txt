@@ -1,0 +1,4 @@
+"D:\MyPrograms\JetBrains\CLion 2021.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" E:\CodeSpace\QtSpace\WorkSpace007\IceCapture
+-- Configuring done
+-- Generating done
+-- Build files have been written to: E:/CodeSpace/QtSpace/WorkSpace007/IceCapture/cmake-build-debug
